@@ -22,7 +22,6 @@ def c_is_fun(text):
     return "C " + text.replace('_', ' ')
 
 
-@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_is_cool(text='is_cool'):
     """ Prints a Message when /python is called """
@@ -32,13 +31,13 @@ def python_is_cool(text='is_cool'):
 @app.route('/number/<int:n>', strict_slashes=False)
 def is_n_number(n):
     """ Prints a Message when /number is called only if n is an int"""
-    return "{:d} is a number".format(n)
+    return str(n) + "is a number"
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """ display a HTML page only if n is an integer """
-    return render_template('5-number.html', value=n)
+    return render_template('number.html', number=n)
 
 
 if __name__ == "__main__":
