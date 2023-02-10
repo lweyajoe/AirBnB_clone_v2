@@ -33,7 +33,7 @@ def is_n_number(n):
     """ Prints a Message when /number is called only if n is an int"""
     return str(n) + "is a number"
 
-
+@app.route('/number_template/',strict_slashes=False)
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """ display a HTML page only if n is an integer """
